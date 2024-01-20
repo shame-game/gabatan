@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
-<body>
+<body style="overflow-y: auto;">
   <!--[if IE]>
       <p class="browserupgrade">
         You are using an <strong>outdated</strong> browser. Please
@@ -118,9 +118,18 @@
     <!-- header navbar -->
 
     <div id="home" class="header_hero d-lg-flex align-items-center">
-      <img class="shape shape-1" src="assets/images/shape-1.svg" alt="shape" />
-      <img class="shape shape-2" src="assets/images/shape-2.svg" alt="shape" />
-      <img class="shape shape-3" src="assets/images/shape-3.svg" alt="shape" />
+      <svg style="position: absolute;
+      top: 0;
+      left: 0;
+      height: 1200px;" id="header_shape" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1366 850" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1366 0H0V662.5C8 770.667 101.3 946.2 410.5 783C719.7 619.8 1176.33 366.333 1366 260V0Z" fill="url(#MyGradient)"></path>
+        <defs>
+          <linearGradient id="MyGradient">
+            <stop offset="5%" stop-color="#ee2d24" />
+            <stop offset="95%" stop-color="#f57222" />
+          </linearGradient>
+        </defs>
+      </svg>
 
       <div class="container">
         <div class="row align-items-center">
@@ -131,7 +140,7 @@
               </h2>
               <img src="assets/images/z4872440731371_23d130c3ddbee664adb9edc308bc7284.jpg" alt=""
                 class="mt-4 image-donors" />
-              <p> Chất lượng tạo uy tín- Khách hàng tạo giá trị
+              <p> Chất lượng tạo uy tín - Khách hàng tạo giá trị
                 Với đội ngũ đầu bếp cùng bề dày kinh nghiệm, một quá trình chọn lọc nghiêm ngặt, đáp ứng được các tiêu
                 chuẩn ngon - an toàn - sang trọng
                 Gà Bà Tân sẽ đem lại cho bạn một trải nghiệm hoàn toàn khác biệt và khó quên</p>
@@ -230,11 +239,14 @@
           </div>
         </div>
       </div>
-      <h1 style="margin-bottom: -40px;font-size: 2em;color: var(--color-main);">GÀ BÀ TÂN ĐẶC BIỆT CẢ CON</h1>
+      <h1 style="margin-bottom: -40px;font-size: 2em;-webkit-text-fill-color: transparent;
+      background: -webkit-linear-gradient(300deg, #ee2d24 0%, #f57222 25%, #ee2d24 50%, #f57222 75%, #ee2d24 100%) 0% 0% / 400% text;">GÀ BÀ TÂN ĐẶC BIỆT CẢ CON</h1>
       <div id="timeline" class="row justify-content-center" style="position: relative;padding: 50px 0;"></div>
-      <h1 style="margin-bottom: -40px;font-size: 2em;color: var(--color-main);">HẢI SẢN BÀ TÂN</h1>
+      <h1 style="margin-bottom: -40px;font-size: 2em;-webkit-text-fill-color: transparent;
+      background: -webkit-linear-gradient(300deg, #ee2d24 0%, #f57222 25%, #ee2d24 50%, #f57222 75%, #ee2d24 100%) 0% 0% / 400% text;">HẢI SẢN BÀ TÂN</h1>
       <div id="timeline1" class="row justify-content-center" style="position: relative;padding: 50px 0;"></div>
-      <h1 style="margin-bottom: -40px;font-size: 2em;color: var(--color-main);">LỰA CHỌN HOÀN HẢO</h1>
+      <h1 style="margin-bottom: -40px;font-size: 2em;-webkit-text-fill-color: transparent;
+      background: -webkit-linear-gradient(300deg, #ee2d24 0%, #f57222 25%, #ee2d24 50%, #f57222 75%, #ee2d24 100%) 0% 0% / 400% text;">LỰA CHỌN HOÀN HẢO</h1>
       <div id="timeline2" class="row justify-content-center" style="position: relative;padding: 50px 0;"></div>
     </div>
   </section>
@@ -264,6 +276,14 @@
   <!--- SCREENSHOT PART START --->
 
   <section id="screenshot" class="screenshot_area d-lg-flex align-items-center">
+    <svg style="position: absolute;
+    content: '';
+    top: -200px;
+    right: 0;
+    width: 50%;
+    overflow: visible;" id="screenshot_shape" preserveAspectRatio="xMidYMid slice" viewBox="0 0 801 715" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M801 715V0C572.5 168.833 99.5999 520.3 35.9999 575.5C-27.6001 630.7 9.4999 691.5 35.9999 715H801Z" fill="url(#MyGradient)"></path>
+    </svg>
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
@@ -403,6 +423,13 @@
 
 
   <section id="footer" class="footer_area  pb-80">
+    <svg style="position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1180px;" id="footer_shape" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1360 852" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1360 852H0V593C209.833 476.333 698.4 205.9 974 57.5C1249.6 -90.9 1346.17 84 1360 190V852Z" fill="url(#MyGradient)"></path>
+    </svg>
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-7">
@@ -461,6 +488,45 @@
       <!-- row -->
     </div>
     <!-- container -->
+  </section>
+  <section>
+    <div class="background" style="display: none;"></div>
+    <div class="box" style="display: none;">
+      <h1>Thông tin khách hàng</h1>
+      <form style="width: 80%;" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSelffxAwX1JI6QoPKj0juQWVWQZYBXCLLXfmDXBPf4GCvD52A/formResponse"
+    method="post">
+      <div class="card" id="section-0">
+        <div class="card-body">
+          <div class="form-group">
+            <label for="entry.418921827">Tên</label>
+            <input class="form-control" id="entry.418921827" name="entry.418921827"
+            type="text">
+          </div>
+          <div class="form-group">
+            <label for="entry.2017063690">email</label>
+            <input class="form-control" id="entry.2017063690" name="entry.2017063690"
+            type="text">
+          </div>
+          <div class="form-group">
+            <label for="entry.495925351">Số điện thoại</label>
+            <input class="form-control" id="entry.495925351"
+            name="entry.495925351" type="text">
+          </div>
+          <div class="form-group">
+            <label for="entry.957613580">Địa chỉ</label>
+            <textarea class="form-control" id="entry.957613580" name="entry.957613580"
+            rows="2"></textarea>
+          </div>
+          <input class="btn btn-primary" type="submit" value="Gửi">
+        </div>
+      </div>
+      <div class="form-group d-none">
+        <label for="page-history">Hidden Input</label>
+        <input class="form-control" id="page-history" name="pageHistory"
+        type="text" value="0">
+      </div>
+    </form>
+    </div>
   </section>
   <!--- FOOTER PART ENDS --->
 

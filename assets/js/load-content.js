@@ -102,10 +102,11 @@ fetchSheet
           <a>${row.row4}</a>
           </h4>
           <p style="display: -webkit-box;
-          -webkit-line-clamp: 5;
+          -webkit-line-clamp: 3;
           -webkit-box-orient: vertical;
           overflow: hidden;
           text-align: justify">${row.row2}</p>
+          <a class="onclick">Mua ngay</a>
         </div>
       </div>
     </div>`;
@@ -176,10 +177,11 @@ fetchSheet
           <a>${row.row4}</a>
           </h4>
           <p style="display: -webkit-box;
-          -webkit-line-clamp: 5;
+          -webkit-line-clamp: 3;
           -webkit-box-orient: vertical;
           overflow: hidden;
           text-align: justify">${row.row2}</p>
+          <a class="onclick">Mua ngay</a>
         </div>
       </div>
     </div>`;
@@ -250,10 +252,11 @@ fetchSheet
           <a>${row.row4}</a>
           </h4>
           <p style="display: -webkit-box;
-          -webkit-line-clamp: 5;
+          -webkit-line-clamp: 3;
           -webkit-box-orient: vertical;
           overflow: hidden;
           text-align: justify">${row.row2}</p>
+          <a class="onclick">Mua ngay</a>
         </div>
       </div>
     </div>`;
@@ -307,3 +310,44 @@ fetchSheet
   .then((rows) => {
     document.querySelector("#video iframe").src = rows[0].videoUrl;
   });
+
+  window.onload = () => {
+    
+    document.querySelectorAll('.onclick').forEach((row)=>{
+      row.addEventListener('click',()=>{
+        document.querySelector('.background').setAttribute('style','display:block')
+        document.querySelector('.box').setAttribute('style','display:flex')
+      })
+    })
+    document.querySelector('.background').addEventListener('click',()=>{
+      document.querySelector('.background').setAttribute('style','display:none')
+      document.querySelector('.box').setAttribute('style','display:none')
+    })
+
+      // $(window).on('scroll', function dsdsd (event) {
+      // var scroll = $(window).scrollTop();
+      // if (scroll < 300) {
+      // } else {
+      //   document.querySelector('.background').setAttribute('style','display:block')
+      // document.querySelector('.box').setAttribute('style','display:flex')
+      //   removeEventListener('scroll', dsdsd)
+      // }
+
+      
+      $(window).on('scroll', function (event) {
+        var scroll = $(window).scrollTop();
+        if (scroll < 500 || popupCount > 0) {
+        } else {
+          document.querySelector('.background').setAttribute('style','display:block')
+          document.querySelector('.box').setAttribute('style','display:flex')
+          document.querySelector('body').setAttribute('style','overflow-y: hidden')
+          document.querySelector('.background').addEventListener('click',()=>{
+            document.querySelector('body').setAttribute('style','overflow-y: auto')
+          })
+          // $(window).off('scroll')
+          popupCount++;
+        }
+  });
+};
+
+var popupCount = 0;
