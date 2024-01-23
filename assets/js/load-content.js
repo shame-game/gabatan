@@ -331,13 +331,20 @@ window.onload = () => {
     row.addEventListener('click', () => {
       document.querySelector('.background').setAttribute('style', 'display:block')
       document.querySelector('.box').setAttribute('style', 'display:flex')
+      document.querySelector('body').setAttribute('style', 'overflow-y: hidden')
     })
   })
   document.querySelector('.background').addEventListener('click', () => {
     document.querySelector('.background').setAttribute('style', 'display:none')
     document.querySelector('.box').setAttribute('style', 'display:none')
+    document.querySelector('body').setAttribute('style', 'overflow-y: auto')
+    
   })
-
+  document.querySelector('.clostttt').addEventListener('click', () => {
+    document.querySelector('.background').setAttribute('style', 'display:none')
+    document.querySelector('.box').setAttribute('style', 'display:none')
+    document.querySelector('body').setAttribute('style', 'overflow-y: auto')
+  })
   // $(window).on('scroll', function dsdsd (event) {
   // var scroll = $(window).scrollTop();
   // if (scroll < 300) {
