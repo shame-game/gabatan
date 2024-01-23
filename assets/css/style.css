@@ -2431,3 +2431,26 @@ p {
 .slick-active>button{
   background-color: #00a873;
 }
+
+
+@media (max-width: 582px) {
+  .itit{
+    font-size: calc(16px + 1vw) !important;
+    width: 50%;
+  }
+  .gabatan{
+    font-size: calc(14px + 1vw) !important;
+    text-align: justify !important;
+    width: 90%;
+    margin: 0 auto;
+  }
+  #download{
+    padding-bottom: 180px;
+  }
+  #screenshot>svg{
+    display: none;
+  }
+  .header_hero_content p{
+    font-size: calc(14px + 1vw) !important;
+  }
+}
