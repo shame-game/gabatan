@@ -503,31 +503,30 @@
     <!-- container -->
   </section>
   <section>
-    <div class="background" style="display: none;"></div>
-    <div class="box" style="display: none;">
-      <h1>Thông tin khách hàng</h1>
-      <form style="width: 80%;"
+    <div class="background" style="display:none;"></div>
+    <div class="box" style="display:none;">
+      <h1 style="position: relative;z-index: 999;color: white;">Thông tin khách hàng</h1>
+      <div class="ddd"></div>
+      <form style="width: 80%;" id="formpay"
         action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSelffxAwX1JI6QoPKj0juQWVWQZYBXCLLXfmDXBPf4GCvD52A/formResponse"
         method="post">
         <div class="card" id="section-0">
           <div class="card-body">
             <div class="form-group">
-              <label for="entry.418921827">Tên</label>
-              <input class="form-control" id="entry.418921827" name="entry.418921827" type="text">
+              <input class="form-control" id="entry.418921827" name="entry.418921827" placeholder="Tên" type="text" required>
             </div>
             <div class="form-group">
-              <label for="entry.2017063690">email</label>
-              <input class="form-control" id="entry.2017063690" name="entry.2017063690" type="text">
+              <input class="form-control" id="entry.2017063690" name="entry.2017063690" placeholder='Số điện thoại' type="text" required>
             </div>
             <div class="form-group">
-              <label for="entry.495925351">Số điện thoại</label>
-              <input class="form-control" id="entry.495925351" name="entry.495925351" type="text">
+  
+              <input class="form-control" id="entry.495925351" name="entry.495925351" placeholder="Email" type="email">
             </div>
             <div class="form-group">
-              <label for="entry.957613580">Địa chỉ</label>
-              <textarea class="form-control" id="entry.957613580" name="entry.957613580" rows="2"></textarea>
+      
+              <textarea class="form-control" id="entry.957613580" name="entry.957613580" placeholder="Ghi chú" rows="2"></textarea>
             </div>
-            <input class="btn btn-primary" type="submit" value="Gửi">
+            <input class="gui btn btn-primary" type="submit" value="Mua ngay">
           </div>
         </div>
         <div class="form-group d-none">
@@ -537,6 +536,33 @@
       </form>
     </div>
   </section>
+  <script>
+    document.querySelector("#formpay").addEventListener("submit", event => {
+      // prevent submit
+      event.preventDefault();
+
+      // call as API
+      const URL = "https://docs.google.com/forms/d/e/1FAIpQLSelffxAwX1JI6QoPKj0juQWVWQZYBXCLLXfmDXBPf4GCvD52A/viewform";
+
+      let formData = new URLSearchParams();
+      formData.append('entry.418921827', document.querySelector("input[name='entry.418921827']").value);
+      formData.append('entry.2017063690', document.querySelector("input[name='entry.2017063690']").value);
+      formData.append('entry.495925351', document.querySelector("input[name='entry.495925351']").value);
+      formData.append('entry.957613580', document.querySelector("input[name='entry.957613580']").value);
+
+      fetch(URL + "?" + formData.toString(), {
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        },
+        method: "post",
+        "mode": "cors"
+      });
+
+      alert("Gửi thông tin thành công");
+      document.querySelector('.infor .button>.next').removeAttribute('disabled')
+    });
+  </script>
   <!--- FOOTER PART ENDS --->
 
   <!--- BACK TOP TOP PART START --->
