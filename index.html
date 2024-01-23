@@ -520,12 +520,10 @@
               <input class="form-control" id="entry.2017063690" name="entry.2017063690" placeholder='Số điện thoại' type="text" required>
             </div>
             <div class="form-group">
-  
               <input class="form-control" id="entry.495925351" name="entry.495925351" placeholder="Email" type="email">
             </div>
             <div class="form-group">
-      
-              <textarea class="form-control" id="entry.957613580" name="entry.957613580" placeholder="Ghi chú" rows="2"></textarea>
+              <input class="form-control" id="entry.957613580" name="entry.957613580" placeholder="Ghi chú" rows="2"></input>
             </div>
             <input class="gui btn btn-primary" type="submit" value="Mua ngay">
           </div>
@@ -537,33 +535,6 @@
       </form>
     </div>
   </section>
-  <script>
-    document.querySelector("#formpay").addEventListener("submit", event => {
-      // prevent submit
-      event.preventDefault();
-
-      // call as API
-      const URL = "https://docs.google.com/forms/d/e/1FAIpQLSelffxAwX1JI6QoPKj0juQWVWQZYBXCLLXfmDXBPf4GCvD52A/viewform";
-
-      let formData = new URLSearchParams();
-      formData.append('entry.418921827', document.querySelector("input[name='entry.418921827']").value);
-      formData.append('entry.2017063690', document.querySelector("input[name='entry.2017063690']").value);
-      formData.append('entry.495925351', document.querySelector("input[name='entry.495925351']").value);
-      formData.append('entry.957613580', document.querySelector("input[name='entry.957613580']").value);
-
-      fetch(URL + "?" + formData.toString(), {
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-          "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-        },
-        method: "post",
-        "mode": "cors"
-      });
-
-      alert("Gửi thông tin thành công");
-      document.querySelector('.infor .button>.next').removeAttribute('disabled')
-    });
-  </script>
   <!--- FOOTER PART ENDS --->
 
   <!--- BACK TOP TOP PART START --->

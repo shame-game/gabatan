@@ -9,7 +9,6 @@ fetchSheet
     /*let imageUrl = 'rows[0].imageUrl || "assets/images/header_app.png";'*/
     let imageUrld = ''
       rows.forEach((row,i) => {
-        console.log(row);
         imageUrld += `
         <div
           class="image wow fadeInRightBig"
